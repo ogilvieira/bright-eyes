@@ -1,0 +1,14 @@
+{
+  "name": "bright-eyes",
+  "version": "1.0.0",
+  "description": "PI RUBY SENAC EAD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
