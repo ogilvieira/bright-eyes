@@ -1,32 +1,26 @@
-const Sequelize = require('sequelize');
 const express = require('express')
 const app = express()
 const port = 3000
+const db = require('./db.js');
+const ejsBlocks = require('ejs-blocks');
 
 // VIEWS CONFIG
+app.engine('ejs', ejsBlocks);
 app.set('view engine', 'ejs');
-app.set('view', './views/');
-app.use(express.static('public'))
+app.set('views', __dirname + '/views');
 
-// Configura Models/Banco
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: 'banco-de-dados.sqlite'
-});
+// STATIC FILES
+app.use(express.static('public'))
 
 // ROTAS
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.render('index', {})
 })
 
 
-sequelize.authenticate((ev) => {
-    console.info(ev);
-    
-    app.listen(port, () => {
-        console.log(`Rodando em => http://localhost:${port}`)
-    })      
-    
-});
+db.sync(() => console.log(`Banco de dados conectado: ${process.env.DB_NAME}`));
 
+app.listen(port, () => {
+    console.log(`Rodando em => http://localhost:${port}`)
+});
 

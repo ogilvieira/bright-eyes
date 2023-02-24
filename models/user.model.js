@@ -1,7 +1,7 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('sqlite::memory:');
+import { DataTypes } from "sequelize";
+import db from "../db.js";
 
-const User = sequelize.define('User', {
+const User = db.define('User', {
   // Model attributes are defined here
   firstName: {
     type: DataTypes.STRING,
@@ -15,5 +15,6 @@ const User = sequelize.define('User', {
   // Other model options go here
 });
 
-// `sequelize.define` also returns the model
-console.log(User === sequelize.models.User); // true
+User.sync();
+
+return User;
