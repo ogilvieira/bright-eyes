@@ -1,20 +1,39 @@
-import { DataTypes } from "sequelize";
-import db from "../db.js";
+const bcrypt = require('bcryptjs');
 
-const User = db.define('User', {
-  // Model attributes are defined here
-  firstName: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  lastName: {
-    type: DataTypes.STRING
-    // allowNull defaults to true
-  }
-}, {
-  // Other model options go here
-});
+module.exports = function(sequelize, DataTypes) { 
 
-User.sync();
-
-return User;
+  const User = sequelize.define('User', {
+    nome: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    sobrenome: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    senha: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    tipo: {
+      type: DataTypes.STRING,
+      defaultValue: 'editor',
+      allowNull: false
+    },
+    ativo: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: true
+    }
+  }, {
+    freezeTableName: true,
+    hooks: {
+      beforeCreate: (user) => {
+        const salt = bcrypt.genSaltSync();
+        user.password = bcrypt.hashSync(user.password, salt);
+      }
+    }
+  });
+   
+  User.sync();
+  return User;
+}

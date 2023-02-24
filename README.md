@@ -10,6 +10,12 @@ yarn install
 ```
 
 ## Para iniciar
+Em modo produção:
 ```
 yarn start
+```
+
+Em modo de desenvolvimento:
+```
+yarn dev
 ```

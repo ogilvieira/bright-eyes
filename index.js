@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const db = require('./db.js');
 const ejsBlocks = require('ejs-blocks');
+const path = require('path');
 
 // VIEWS CONFIG
 app.engine('ejs', ejsBlocks);
@@ -13,14 +14,16 @@ app.set('views', __dirname + '/views');
 app.use(express.static('public'))
 
 // ROTAS
-app.get('/', (req, res) => {
-  res.render('index', {})
-})
+const routes = require(path.join(__dirname, 'routes.js'))(app);
+app.use('/', routes);
 
-
-db.sync(() => console.log(`Banco de dados conectado: ${process.env.DB_NAME}`));
-
-app.listen(port, () => {
-    console.log(`Rodando em => http://localhost:${port}`)
-});
-
+db.sequelize
+  .authenticate()
+  .then(() => {
+    app.listen(port, '0.0.0.0', () => {
+      console.log("Express server listening on port " + port);
+    });
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
