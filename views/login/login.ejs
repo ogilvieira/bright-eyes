@@ -1,2 +1,21 @@
 <% layout('../template/default') -%>
 <h1>Login</h1>
+
+<table>
+    <thead>
+        <tr>
+            <td><strong>Nome</strong></td>
+            <td><strong>E-mail</strong></td>
+            <td><strong>Tipo</strong></td>
+            <td><strong>Ativo</strong></td>
+        </tr>
+    </thead>
+    <% users && !!users.length && users.forEach(user => { %>
+    <tr>
+        <td><%=user.nomeCompleto%></td>
+        <td><%=user.email%></td>
+        <td><%=user.tipo%></td>
+        <td><%= user.ativo ? 'sim' : 'não'%></td>
+    </tr>
+    <% }) %>
+</table>

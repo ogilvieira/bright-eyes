@@ -1,12 +1,9 @@
-const UserModel = require('../models/user.model');
+const db = require('../db');
 
 exports.Home = async (req, res) => {
-    console.info(Object.keys(UserModel));
-
-    const users = await UserModel.findAll({});
-
-    console.info(users);
-
+    const users = await db.users.findAll({
+        attributes: ['id', 'nome', 'sobrenome', 'nomeCompleto', 'email', 'tipo', 'ativo'],
+    });
     res.render('login/login', {
         users
     });

@@ -11,13 +11,29 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    nomeCompleto: {
+      type: DataTypes.VIRTUAL,
+      get() {
+        return `${this.nome} ${this.sobrenome}`;
+      },
+      set() {
+        throw new Error('Do not try to set the `nomeCompleto` value!');
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true
+      }
+    },
     senha: {
       type: DataTypes.STRING,
       allowNull: false
     },
     tipo: {
       type: DataTypes.STRING,
-      defaultValue: 'editor',
+      defaultValue: 'cliente',
       allowNull: false
     },
     ativo: {
@@ -29,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
     hooks: {
       beforeCreate: (user) => {
         const salt = bcrypt.genSaltSync();
-        user.password = bcrypt.hashSync(user.password, salt);
+        user.senha = bcrypt.hashSync(user.senha, salt);
       }
     }
   });

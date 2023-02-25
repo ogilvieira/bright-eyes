@@ -5,7 +5,8 @@ const path = require('path');
 // Configura Models/Banco
 const sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: 'banco-de-dados.db'
+    storage: 'banco-de-dados.db',
+    logging: false
 });
 
 let db = {};
