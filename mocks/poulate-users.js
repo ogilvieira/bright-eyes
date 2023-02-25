@@ -1,4 +1,4 @@
-const { usersModel } = require('./db.js');
+const { usersModel } = require('../db.js');
 
 const arr = [
     {
