@@ -29,7 +29,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     senha: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      set(value) {
+        const salt = bcrypt.genSaltSync();
+        this.setDataValue('senha', bcrypt.hashSync(value, salt));
+      }
     },
     tipo: {
       type: DataTypes.STRING,
@@ -41,15 +45,14 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: true
     }
   }, {
-    freezeTableName: true,
-    hooks: {
-      beforeCreate: (user) => {
-        const salt = bcrypt.genSaltSync();
-        user.senha = bcrypt.hashSync(user.senha, salt);
-      }
-    }
+    freezeTableName: true
   });
+
+  User.prototype.checaSenha = function(senha) {
+    return bcrypt.compareSync(senha, this.dataValues.senha);
+  }
    
+
   User.sync();
   return User;
 }

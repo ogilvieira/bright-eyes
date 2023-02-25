@@ -4,6 +4,13 @@ const port = 3000
 const db = require('./db.js');
 const ejsBlocks = require('ejs-blocks');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+
+
+// Cookies/Body
+app.use(bodyParser())
+app.use(cookieParser())
 
 // VIEWS CONFIG
 app.engine('ejs', ejsBlocks);

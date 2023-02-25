@@ -1,0 +1,27 @@
+<% layout('../template/default') -%>
+<h1>Cadastro</h1>
+
+<% if(typeof error !== 'undefined' && error) { %>
+<p>
+    <%=error%>
+</p>
+<% } %>
+
+<form method="post" action="/cadastro">
+    <label>Nome:</label><br/>
+    <input type="text" name="nome"/><br/>
+
+    <label>Sobrenome:</label><br/>
+    <input type="text" name="nome"/><br/>
+
+    <label>E-mail:</label><br/>
+    <input type="text" name="email"/><br/>
+
+    <label>Senha:</label><br/>
+    <input type="password" name="senha"/><br/>
+    <br>
+    <button type="submit">Cadastrar</button>
+</form>
+<p>
+    <a href="/login">Login</a>
+</p>

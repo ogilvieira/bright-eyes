@@ -1,0 +1,18 @@
+<% layout('../template/default') -%>
+<h1>Recuperar Senha</h1>
+
+<% if(typeof error !== 'undefined' && error) { %>
+<p>
+    <%=error%>
+</p>
+<% } %>
+
+<form method="post" action="/recuperar-senha">
+    <label>E-mail:</label><br/>
+    <input type="text" name="email"/><br/>
+    <br>
+    <button type="submit">Enviar</button>
+</form>
+<p>
+    <a href="/login">Login</a>
+</p>
