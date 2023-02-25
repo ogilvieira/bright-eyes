@@ -4,7 +4,7 @@
 - ORM para acesso ao banco SQLITE: [Sequelize](https://sequelize.org/docs/v6/)
 
 ## Primeira vez
-Instalar dependências usando o gerenciador de pacote (Yarn)[https://yarnpkg.com/]
+Instalar dependências usando o gerenciador de pacote [Yarn](https://yarnpkg.com/).
 ```
 yarn install
 ```
