@@ -1,0 +1,68 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  position: relative;
+  background-image: url('imgs/background-img.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(215, 239, 246, 0.8) 5.82%, rgba(203, 229, 253, 0) 100%);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 10px;
+  margin-top: 7rem;
+}
+
+.glass-card .card-body {
+  padding: 20px 0px;
+}
+
+.glass-card h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(72, 167, 248, 0.63);
+}
+
+.glass-card button {
+  background-color: #6EC2FB;
+  border-radius: 48px;
+  border: none;
+}
+
+.glass-card *,
+.input-group-lg>.form-control {
+  font-size: 16px;
+}
+
+.glass-card p {
+  color: rgba(9, 10, 10, 0.5);
+  font-weight: 500;
+} 
+
+.glass-card a {
+  text-decoration: underline;
+}
+
+
+.input-group-lg>.form-control {
+  background: #FFFFFF;
+  border: 1px solid #E3E5E6;
+  border-radius: 8px;
+}
+
+.user-icon {
+  height: 42px;
+  width: 54px;
+  padding: 6px !important;
+}
