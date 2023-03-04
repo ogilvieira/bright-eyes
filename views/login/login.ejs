@@ -1,73 +1,50 @@
 <% layout('../template/default') -%>
 
-<% if(typeof error !== 'undefined' && error) { %>
-<p>
-    <%=error%>
-</p>
-<% } %>
+  <% if(typeof error !=='undefined' && error) { %>
+    <p>
+      <%=error%>
+    </p>
+    <% } %>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-12 col-md-7 mx-auto">
-      <div class="card glass-card">
-        <div class="card-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-12 col-md-7 mx-auto d-flex flex-column">
-
-                <h1 class="text-center mb-4">
-                  Login
-                </h1>
-
-                <form class="d-flex flex-column" method="post" action="/login">
-
-                  <p>Nosso cliente?</p>
-
-                  <div class="input-group input-group-lg mb-3">
-                    <div class="input-group-prepend">
-                      <img src="imgs/user-icon.svg" class="input-group-text user-icon"></img>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-7 mx-auto">
+            <div class="glass-card">
+              <div class="card-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12 col-md-7 mx-auto d-flex flex-column">
+                      <h1 class="text-center mb-4">
+                        Login
+                      </h1>
+                      <form class="d-flex flex-column" method="post" action="/login">
+                        <p>Nosso cliente?</p>
+                        <div class="input-group input-group-lg mb-3">
+                          <div class="input-group-prepend">
+                            <img src="imgs/user-icon.svg" class="input-group-text user-icon"></img>
+                          </div>
+                          <input type="text" name="email" class="form-control" placeholder="Usuário"
+                            aria-label="username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                          <div class="input-group-prepend">
+                            <img src="imgs/password-icon.svg" class="input-group-text"></img>
+                          </div>
+                          <input type="password" name="senha" class="form-control" placeholder="Senha"
+                            aria-label="password" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="text-center mb-3">
+                          <a href="/cadastro">Cadastrar</a> | <a href="/recuperar-senha">Recuperar Senha</a>
+                        </div>
+                        <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-5">
+                          LOGIN
+                        </button>
+                      </form>
                     </div>
-                    <input type="text" name="email" class="form-control" placeholder="Usuário" aria-label="username" 
-                      aria-describedby="basic-addon1">
                   </div>
-
-                  <div class="input-group input-group-lg mb-3">
-                    <div class="input-group-prepend">
-                      <img src="imgs/password-icon.svg" class="input-group-text"></img>
-                    </div>
-                    <input type="password" name="senha" class="form-control" placeholder="Senha" aria-label="password"
-                      aria-describedby="basic-addon1">
-                  </div>
-
-                  <div class="text-center mb-3">
-                    <a href="/cadastro">Cadastrar</a> | <a href="/recuperar-senha">Recuperar Senha</a>
-                  </div>
-
-                  <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-5">
-                    LOGIN
-                  </button>
-
-                  <div class="d-flex justify-content-center">
-                    <img class="mx-3" src="imgs/facebook-icon.svg">
-                    <img class="mx-3" src="imgs/google-icon.svg">
-                  </div>
-
-                </form>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- <form method="post" action="/login">
-  <input type="text" name="email"/><br/>
-  <input type="password" name="senha"/><br/>
-  <button type="submit">Login</button>
-</form> -->
-
-<!-- <p>
-    <a href="/cadastro">Cadastrar</a> | <a href="/recuperar-senha">Recuperar Senha</a>
-</p> -->

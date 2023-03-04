@@ -1,82 +1,51 @@
 <% layout('../template/default') -%>
-<!-- <h1>Cadastro</h1> -->
 
-<% if(typeof error !== 'undefined' && error) { %>
-<p>
-    <%=error%>
-</p>
-<% } %>
+  <% if(typeof error !=='undefined' && error) { %>
+    <p>
+      <%=error%>
+    </p>
+    <% } %>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-12 col-md-7 mx-auto">
-        <div class="card glass-card">
-          <div class="card-body">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-12 col-md-7 mx-auto d-flex flex-column">
-                  
-                  <h1 class="text-center mb-4">
-                    Cadastro
-                  </h1>
-  
-                  <form class="d-flex flex-column" method="post" action="/cadastro">
-  
-                    <div class="input-group input-group-lg mb-3">
-                      <input type="text" name="nome" class="form-control" placeholder="Nome" aria-label="nome" 
-                        aria-describedby="basic-addon1">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 col-md-7 mx-auto">
+            <div class="card glass-card">
+              <div class="card-body">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12 col-md-7 mx-auto d-flex flex-column">
+                      <h1 class="text-center mb-4">
+                        Cadastro
+                      </h1>
+                      <form class="d-flex flex-column" method="post" action="/cadastro">
+                        <div class="input-group input-group-lg mb-3">
+                          <input type="text" name="nome" class="form-control" placeholder="Nome" aria-label="nome"
+                            aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                          <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome"
+                            aria-label="sobrenome" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                          <input type="text" name="email" class="form-control" placeholder="E-mail" aria-label="email"
+                            aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group input-group-lg mb-3">
+                          <input type="password" name="senha" class="form-control" placeholder="Senha"
+                            aria-label="password" aria-describedby="basic-addon1">
+                        </div>
+                        <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-3">
+                          Cadastrar
+                        </button>
+                        <a href="/login" class="btn-voltar rounded-pill btn btn-primary btn-lg mx-3 mb-5">
+                          Voltar
+                        </a>
+                      </form>
                     </div>
-  
-                    <div class="input-group input-group-lg mb-3">
-                      <input type="text" name="sobrenome" class="form-control" placeholder="Sobrenome" aria-label="sobrenome"
-                        aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group input-group-lg mb-3">
-                      <input type="text" name="email" class="form-control" placeholder="E-mail" aria-label="email"
-                        aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="input-group input-group-lg mb-3">
-                      <input type="password" name="senha" class="form-control" placeholder="Senha" aria-label="password"
-                        aria-describedby="basic-addon1">
-                    </div>
-
-                    <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-5">
-                      Cadastrar
-                    </button>
-  
-                    <div class="d-flex justify-content-center">
-                      <img class="mx-3" src="imgs/facebook-icon.svg">
-                      <img class="mx-3" src="imgs/google-icon.svg">
-                    </div>
-  
-                  </form>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-<!-- <form method="post" action="/cadastro">
-    <label>Nome:</label><br/>
-    <input type="text" name="nome"/><br/>
-
-    <label>Sobrenome:</label><br/>
-    <input type="text" name="nome"/><br/>
-
-    <label>E-mail:</label><br/>
-    <input type="text" name="email"/><br/>
-
-    <label>Senha:</label><br/>
-    <input type="password" name="senha"/><br/>
-    <br>
-    <button type="submit">Cadastrar</button>
-</form> -->
-
-<!-- <p>
-    <a href="/login">Login</a>
-</p> -->

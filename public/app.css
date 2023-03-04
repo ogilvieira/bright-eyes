@@ -12,7 +12,7 @@ main {
 .img-logo {
   position: absolute;
   top: 1rem;
-  left: 1rem;
+  left: 3rem;
 }
 
 .glass-card {
@@ -40,6 +40,12 @@ main {
   border: none;
 }
 
+.btn-voltar {
+  background-color: #6EC2FB;
+  border: none;
+  text-decoration: none !important;
+}
+
 .glass-card *,
 .input-group-lg>.form-control {
   font-size: 16px;
@@ -54,7 +60,6 @@ main {
   text-decoration: underline;
 }
 
-
 .input-group-lg>.form-control {
   background: #FFFFFF;
   border: 1px solid #E3E5E6;
@@ -65,4 +70,39 @@ main {
   height: 42px;
   width: 54px;
   padding: 6px !important;
+}
+
+.img-person-circle {
+  width: 30%;
+}
+
+.container-product {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 2px 24px #00000036);
+}
+
+.container-product h3 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(72, 167, 248, 0.63);
+}
+
+.container-product h6 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(72, 167, 248, 0.63);
+  text-align: left;
+}
+
+.container-product p {
+  font-size: 12px;
+  color: rgba(9, 10, 10, 0.5);
+  font-weight: 500;
+  text-align: left;
 }

@@ -1,2 +1,43 @@
 <% layout('../template/default') -%>
-<h1>Olá, <%=user.nome%>. <a href="/login">[Sair]</a></h1>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-7 mx-auto">
+        <div class="glass-card">
+          <div class="card-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 col-md-10 mx-auto d-flex flex-column">
+
+                  <div class="text-center">
+                    <h1 class="mb-4">
+                      Olá, <%=user.nome%>!
+                    </h1>
+                    <img src="imgs/person-circle.svg" class="img-person-circle mb-4">
+                  </div>
+
+                  <div class="text-center container-product mb-3">
+                    <h3>Produto</h3>
+                    <img src="imgs/product.svg" class="mb-3">
+                    
+                    <div class="mb-1 px-2">
+                      <h6>Descrição:</h6> 
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique blandit risus vel mattis.</p> 
+                    </div>
+
+                  </div>
+
+                  <div class="d-flex flex-column" method="post" action="/login">
+                    <div class="list-group">
+                      <a href="/login" class="list-group-item list-group-item-action">Sair</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
