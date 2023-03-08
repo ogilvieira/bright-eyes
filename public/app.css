@@ -87,6 +87,12 @@ main {
   padding: 6px !important;
 }
 
+.email-icon {
+  height: 42px;
+  width: 54px;
+  padding: 6px !important;
+}
+
 .img-person-circle {
   width: 30%;
 }
