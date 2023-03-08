@@ -1,11 +1,5 @@
 <% layout('../template/default') -%>
 
-  <% if(typeof error !=='undefined' && error) { %>
-    <p>
-      <%=error%>
-    </p>
-    <% } %>
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 col-md-7 mx-auto">
@@ -39,6 +33,11 @@
                         <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-5">
                           LOGIN
                         </button>
+
+                        <% if(typeof error !=='undefined' && error) { %>
+                          <p class="p-error text-center"> <%=error%> </p>
+                          <% } %>
+                          
                       </form>
                     </div>
                   </div>
