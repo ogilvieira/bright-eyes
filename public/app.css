@@ -131,3 +131,7 @@ footer {
     margin: 0;
   }
 }
+
+.p-error {
+  color: red !important;
+}
