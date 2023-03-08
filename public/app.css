@@ -1,18 +1,34 @@
 body {
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
+}
+
+nav {
+  background: transparent;
+  margin-bottom: -80px;
+}
+
+footer {
+  background: transparent;
+  margin-top: -24px;
 }
 
 main {
   position: relative;
+  padding: 110px 0 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
   background-image: url('imgs/background-img.svg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .img-logo {
-  position: absolute;
-  top: 1rem;
-  left: 3rem;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  max-height: 80px;
 }
 
 .glass-card {
@@ -20,7 +36,6 @@ main {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   border: none;
   border-radius: 10px;
-  margin-top: 7rem;
 }
 
 .glass-card .card-body {
@@ -105,4 +120,14 @@ main {
   color: rgba(9, 10, 10, 0.5);
   font-weight: 500;
   text-align: left;
+}
+
+footer {
+  color: rgba(9, 10, 10, 0.5);
+}
+
+@media screen and (min-width: 768px) { 
+  .img-logo {
+    margin: 0;
+  }
 }
