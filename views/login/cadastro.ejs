@@ -1,11 +1,5 @@
 <% layout('../template/default') -%>
 
-  <% if(typeof error !=='undefined' && error) { %>
-    <p>
-      <%=error%>
-    </p>
-    <% } %>
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 col-md-7 mx-auto">
@@ -34,12 +28,19 @@
                           <input type="password" name="senha" class="form-control" placeholder="Senha"
                             aria-label="password" aria-describedby="basic-addon1">
                         </div>
-                        <button type="submit" class="rounded-pill btn btn-primary btn-lg mx-3 mb-3">
+                        <a type="submit" href="/login" class="rounded-pill btn btn-primary btn-lg mx-3 mb-3 no-text-decoration">
                           Cadastrar
-                        </button>
+                        </a>
                         <a href="/login" class="btn-voltar rounded-pill btn btn-primary btn-lg mx-3 mb-5">
                           Voltar
                         </a>
+
+                        <% if(typeof error !=='undefined' && error) { %>
+                          <p>
+                            <%=error%>
+                          </p>
+                        <% } %>
+
                       </form>
                     </div>
                   </div>
