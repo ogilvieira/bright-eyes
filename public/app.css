@@ -141,3 +141,10 @@ footer {
 .p-error {
   color: red !important;
 }
+
+.no-text-decoration {
+  background-color: #6EC2FB;
+  border-radius: 48px;
+  border: none;
+  text-decoration: none !important;
+}
