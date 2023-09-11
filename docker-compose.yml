@@ -44,6 +44,8 @@ services:
 
   frontend:
     image: brigh_eyes_frontend
+    environment:
+      PORT: 80
     build:
       context: ./bright-eyes-ui
       dockerfile: Dockerfile
