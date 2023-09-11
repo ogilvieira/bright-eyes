@@ -1,7 +1,44 @@
 version: "3"
 
 services:
+  postgres:
+    image: postgres:14
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      APP_DB_USER: root
+      APP_DB_PASS: root
+      APP_DB_NAME: brighteyes
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+
   api:
-    build: ./bright-eyes-api
-  front:
-    build: ./bright-eyes-ui
+    image: brigh_eyes_api
+    build:
+      context: ./bright-eyes-api
+      dockerfile: Dockerfile
+    depends_on: 
+      - postgres
+    links:
+      - postgres
+    ports:
+      - "8080:8080"
+  ui:
+    image: brigh_eyes_ui
+    build:
+      context: ./bright-eyes-ui
+      dockerfile: Dockerfile
+    depends_on: 
+      - api
+    links:
+      - api
+    ports:
+      - "3030:3030"
