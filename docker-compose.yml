@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  postgres:
+  database:
     image: postgres:14
     healthcheck:
       test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "postgres" ]
@@ -20,25 +20,37 @@ services:
     ports:
       - "5432:5432"
 
-  api:
-    image: brigh_eyes_api
+  backend:
+    image: brigh_eyes_backend
     build:
       context: ./bright-eyes-api
       dockerfile: Dockerfile
+    environment:
+      SERVER_LOG: false
+      DB_HOST: database
+      DB_PORT: 5432
+      DB_USER: root
+      DB_PASS: root
+      DB_NAME: brighteyes
+      DB_SYNC: true
+      DB_LOG: false
+      JWT_SECRET: br1g8t3y3s
     depends_on: 
-      - postgres
+      - database
     links:
-      - postgres
+      - database
     ports:
-      - "8080:8080"
-  ui:
-    image: brigh_eyes_ui
+      - "8080:80"
+
+  frontend:
+    image: brigh_eyes_frontend
     build:
       context: ./bright-eyes-ui
       dockerfile: Dockerfile
-    depends_on: 
-      - api
+    depends_on:
+      - database 
+      - backend
     links:
-      - api
+      - backend
     ports:
-      - "3030:3030"
+      - "3000:80"
