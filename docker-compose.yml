@@ -16,7 +16,7 @@ services:
       APP_DB_PASS: root
       APP_DB_NAME: brighteyes
     volumes:
-      - ./db:/docker-entrypoint-initdb.d/
+      - ./bright-eyes-api/db:/docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
 
@@ -26,6 +26,7 @@ services:
       context: ./bright-eyes-api
       dockerfile: Dockerfile
     environment:
+      HOST: '0.0.0.0'
       SERVER_LOG: false
       DB_HOST: database
       DB_PORT: 5432
@@ -45,6 +46,7 @@ services:
   frontend:
     image: brigh_eyes_frontend
     environment:
+      HOST: '0.0.0.0'
       PORT: 80
     build:
       context: ./bright-eyes-ui
@@ -55,4 +57,4 @@ services:
     links:
       - backend
     ports:
-      - "3000:80"
+      - "80:80"
