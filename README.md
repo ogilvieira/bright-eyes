@@ -34,12 +34,12 @@ yarn dev
 ```
 
 ## USUÁRIOS DE TESTE
-| E-mail | Senha |
-|--------|-------|
-ariane.figueiredo@senac.com.br | 123456
-david.silva@senac.com.br | 123456
-felipe.valli@senac.com.br | 123456
-gilmair.barros@senac.com.br | 123456
-ignacio.mourullo@senac.com.br | 123456
-josué.neto@senac.com.br | 123456
-lucas.pereira@senac.com.br | 123456
+E-mail                        |Senha |Tipo   |
+------------------------------|------|-------|
+ariane.figueiredo@senac.com.br|123456|cliente|
+david.silva@senac.com.br      |123456|editor |
+felipe.valli@senac.com.br     |123456|cliente|
+gilmair.barros@senac.com.br   |123456|gerente|
+ignacio.mourullo@senac.com.br |123456|editor |
+josué.neto@senac.com.br       |123456|cliente|
+lucas.pereira@senac.com.br    |123456|gerente|
