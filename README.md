@@ -1,8 +1,19 @@
-CENTRO UNIVERSITÁRIO SENAC: TECNOLOGIA EM SISTEMAS PARA INTERNET
+<p align="center">
+    CENTRO UNIVERSITÁRIO SENAC:<br/>
+    TECNOLOGIA EM SISTEMAS PARA INTERNET<br/><br/>
+    PROJETO INTEGRADOR:<br/>
+    CRIAÇÃO DE MINIMUM VIABLE PRODUCT
+</p>
 
-PROJETO INTEGRADOR IV:DESENVOLVIMENTO DE SISTEMA WEB MODULARIZÁVEL - 2ª ENTREGA
+---
 
-Alunos: 
+<p align="center">
+    <img src="./doc/logo.svg" width="275" height="80" border="0"/>
+</p>
+
+---
+
+## Alunos: 
  - Ariane Araújo Cabral de Figueiredo
  - David Santana da Silva
  - Felipe Valli
@@ -11,29 +22,61 @@ Alunos:
  - Josué Domingues de Oliveira Neto
  - Lucas Souza Pereira 
 
-## Requerimentos
-- [Node v16](https://nodejs.org/docs/latest-v16.x/api/)
-- Template Engine [EJS](https://ejs.co/)
-- ORM para acesso ao banco SQLITE: [Sequelize](https://sequelize.org/docs/v6/)
+## Tecnologias
 
-## Primeira vez
-Instalar dependências usando o gerenciador de pacote [Yarn](https://yarnpkg.com/)
+### Protótipo
+- [Figma Geral](https://www.figma.com/file/1fRZ3Q4iAgCL0llICXowcS/BrighEyes?type=design&node-id=0%3A1&mode=design&t=UBWFA8k48tu9WpsG-1)
+- [Figma Fluxo Cliente](https://www.figma.com/proto/1fRZ3Q4iAgCL0llICXowcS/BrighEyes?type=design&node-id=106-63&t=mVk5yQxQyymtmcMz-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=113%3A1469&mode=design)
+- [Figma Fluxo Gerente](https://www.figma.com/proto/1fRZ3Q4iAgCL0llICXowcS/BrighEyes?type=design&node-id=675-1480&t=RC8jtAscvVE57RFa-1&scaling=scale-down&page-id=675%3A1287&starting-point-node-id=675%3A1458&mode=design)
+- [Figma Fluxo Editor(a)](https://www.figma.com/proto/1fRZ3Q4iAgCL0llICXowcS/BrighEyes?type=design&node-id=675-7003&t=UBWFA8k48tu9WpsG-0&scaling=scale-down&page-id=675%3A7003&starting-point-node-id=675%3A7051)
+
+#### Backend:
+- Engine [Node v18](https://nodejs.org/docs/latest-v18.x/api/)
+- Package Manager: [NPM](https://www.npmjs.com/)
+- Transpiler [TypeScript](https://www.typescriptlang.org/)
+- Framework [Fastify](https://fastify.dev/)
+- Orm [TypeOrm](https://typeorm.io/)
+- Linter: [EsLint](https://eslint.org/)
+
+#### Frontend:
+- [Node v18](https://nodejs.org/docs/latest-v18.x/api/)
+- Package Manager: [NPM](https://www.npmjs.com/)
+- Transpiler [TypeScript](https://www.typescriptlang.org/)
+- Framework [Vue3](https://vuejs.org/)
+- Vue3 Component Framework [Vuetify](https://vuetifyjs.com/)
+- Tooling [Vite](https://vitejs.dev/)
+- Linter: [EsLint](https://eslint.org/)
+- Package Manager: [Yarn](https://yarnpkg.com/)
+
+#### Banco de Dados:
+- [Postgres14](https://www.postgresql.org/)
+- Diagrama de Relacionamento:
+
+<p align="center">
+    <img src="./doc/diagrama.jpg" width="540" height="541" border="2"/>
+</p>
+
+#### Ferramental
+- [Docker](https://www.docker.com/)
+- Docker Image: [Linux Alpine](https://hub.docker.com/_/alpine)
+- Database Client: [DBeaver](https://dbeaver.io/download/)
+- Editor de Texto: [Visual Studio Code](https://code.visualstudio.com/)
+- Editor Gráfico: [Figma](https://www.figma.com/)
+
+## Instruções
+
+#### Para iniciar
+Com o [Docker](https://www.docker.com/) instalado, basta apenas abrir o terminal `bash` ou `cmd` e executar o comando:
+
 ```
-yarn install
+docker compose up
+```
+Desta forma a aplicação estará em execução no endereço:
+```
+http://127.0.0.1:80
 ```
 
-## Para iniciar
-Em modo produção:
-```
-yarn start
-```
-
-Em modo de desenvolvimento:
-```
-yarn dev
-```
-
-## USUÁRIOS DE TESTE
+#### USUÁRIOS DE TESTE
 E-mail                        |Senha |Tipo   |
 ------------------------------|------|-------|
 ariane.figueiredo@senac.com.br|123456|cliente|
