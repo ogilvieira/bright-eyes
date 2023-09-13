@@ -1,6 +1,6 @@
 [submodule "bright-eyes-ui"]
 	path = bright-eyes-ui
-	url = git@github.com:ogilvieira/bright-eyes-ui.git
+	url = https://github.com/ogilvieira/bright-eyes-ui.git
 [submodule "bright-eyes-api"]
 	path = bright-eyes-api
-	url = git@github.com:ogilvieira/bright-eyes-api.git
+	url = https://github.com/ogilvieira/bright-eyes-api.git
