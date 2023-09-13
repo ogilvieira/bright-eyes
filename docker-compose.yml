@@ -26,7 +26,7 @@ services:
       context: ./bright-eyes-api
       dockerfile: Dockerfile
     environment:
-      HOST: ${HOST}
+      HOST: '0.0.0.0'
       SERVER_LOG: false
       DB_HOST: database
       DB_PORT: 5432
@@ -46,9 +46,9 @@ services:
   frontend:
     image: brigh_eyes_frontend
     environment:
-      HOST: ${HOST}
+      HOST: 0.0.0.0
       PORT: 80
-      API_URL: ${HOST}:8080
+      API_URL: ${HOST_API}
     build:
       context: ./bright-eyes-ui
       dockerfile: Dockerfile
