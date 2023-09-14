@@ -21,7 +21,7 @@ services:
       - "5432:5432"
 
   backend:
-    image: brigh_eyes_backend
+    image: bright_eyes_backend
     build:
       context: ./bright-eyes-api
       dockerfile: Dockerfile
@@ -44,11 +44,11 @@ services:
       - "8080:80"
 
   frontend:
-    image: brigh_eyes_frontend
+    image: bright_eyes_frontend
     environment:
       HOST: 0.0.0.0
       PORT: 80
-      API_URL: ${HOST_API}
+      API_URL: $HOST_API
     build:
       context: ./bright-eyes-ui
       dockerfile: Dockerfile
@@ -58,4 +58,4 @@ services:
     links:
       - backend
     ports:
-      - "80:80"
+      - "3000:80"
