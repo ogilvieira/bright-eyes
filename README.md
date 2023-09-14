@@ -37,6 +37,7 @@
 - Framework [Fastify](https://fastify.dev/)
 - Orm [TypeOrm](https://typeorm.io/)
 - Linter: [EsLint](https://eslint.org/)
+- Documentação com [Postman](https://documenter.getpostman.com/view/604758/2s9YC5wrqY)
 
 #### Frontend:
 - [Node v18](https://nodejs.org/docs/latest-v18.x/api/)
