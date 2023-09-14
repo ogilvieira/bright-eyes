@@ -37,6 +37,7 @@ services:
       DB_SYNC: true
       DB_LOG: false
       JWT_SECRET: br1g8t3y3s
+      HOST_IMAGES: "${HOST_API}/public/images/"
     depends_on: 
       - database
     links:
