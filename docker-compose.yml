@@ -27,6 +27,7 @@ services:
       dockerfile: Dockerfile
     environment:
       HOST: '0.0.0.0'
+      PORT: 8080
       SERVER_LOG: false
       DB_HOST: database
       DB_PORT: 5432
@@ -41,7 +42,7 @@ services:
     links:
       - database
     ports:
-      - "8080:8000"
+      - "8080:8080"
 
   frontend:
     image: bright_eyes_frontend
@@ -52,9 +53,9 @@ services:
       context: ./bright-eyes-ui
       dockerfile: Dockerfile
     depends_on:
-      - database 
+      - database
       - backend
     links:
       - backend
     ports:
-      - "80:3000"
+      - "${PORT}:3000"
