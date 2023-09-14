@@ -66,6 +66,18 @@
 ## Instruções
 
 #### Para iniciar
+Clone este projeto atráves do comando `git clone`:
+
+Para baixar os submódulos:
+```
+git submodule update --init
+```
+Para atualizar submóduloes:
+
+```
+git submodule update recursive --remote
+```
+
 Com o [Docker](https://www.docker.com/) instalado, basta apenas abrir o terminal `bash` ou `cmd` e executar o comando:
 
 ```
